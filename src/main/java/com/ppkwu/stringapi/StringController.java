@@ -12,8 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StringController {
 
+    /**
+     * Method responsible for analyzing passed string.
+     *
+     * @param string    passed string to analyze
+     * @param substring passed substring
+     * @return object of type {@link ResponseEntity} containing information about passed string
+     */
     @GetMapping("string/{string}/{substring}")
-    public ResponseEntity<String> countUpper(@PathVariable("string") String string,
+    public ResponseEntity<String> analyzeString(@PathVariable("string") String string,
         @PathVariable("substring") String substring) {
         Response response = new Response();
 
