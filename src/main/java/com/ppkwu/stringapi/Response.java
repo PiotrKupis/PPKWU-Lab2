@@ -10,6 +10,7 @@ public class Response {
     private Long numbers;
     private Long specialChars;
     private Boolean contains;
+    private Boolean combination;
 
     public Response() {
     }
@@ -34,6 +35,10 @@ public class Response {
         this.contains = contains;
     }
 
+    public void setCombination(Boolean combination) {
+        this.combination = combination;
+    }
+
     @Override
     public String toString() {
         return "Response{" +
@@ -42,6 +47,7 @@ public class Response {
             ", numbers=" + numbers +
             ", specialChars=" + specialChars +
             ", contains=" + contains +
+            ", combination=" + combination +
             '}';
     }
 }

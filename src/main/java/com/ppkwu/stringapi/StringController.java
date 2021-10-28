@@ -44,13 +44,14 @@ public class StringController {
         }
 
         boolean contains = string.contains(substring);
+        boolean combination = uppercase != 0 && lowercase != 0 && numbers != 0 && specialChars != 0;
 
         response.setUppercase(uppercase);
         response.setLowercase(lowercase);
         response.setNumbers(numbers);
         response.setSpecialChars(specialChars);
         response.setContains(contains);
-
+        response.setCombination(combination);
         return ResponseEntity.ok(new Gson().toJson(response));
     }
 
