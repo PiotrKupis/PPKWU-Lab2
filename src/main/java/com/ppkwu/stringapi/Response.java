@@ -11,7 +11,8 @@ public class Response {
     private Long specialChars;
     private Boolean contains;
 
-    public Response() {}
+    public Response() {
+    }
 
     public void setUppercase(Long uppercase) {
         this.uppercase = uppercase;
@@ -31,5 +32,16 @@ public class Response {
 
     public void setContains(Boolean contains) {
         this.contains = contains;
+    }
+
+    @Override
+    public String toString() {
+        return "Response{" +
+            "uppercase=" + uppercase +
+            ", lowercase=" + lowercase +
+            ", numbers=" + numbers +
+            ", specialChars=" + specialChars +
+            ", contains=" + contains +
+            '}';
     }
 }
