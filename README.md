@@ -4,17 +4,15 @@ Project responsible for performing operation on passed string.
 
 ENDPOINT  
 
-Description: endpoint responsible for getting information about number of uppercase, lowercase, numbers, special characters and if contains its combination or contains passed substring  
-Path: string/{string}/{substring} (GET)  
-Params:  
-    {string} - passed string   
-    {substring} - passed substring   
+Description: endpoint responsible for getting information about number of uppercase, lowercase, numbers, special characters and if contains its combination in passed string   
+Path: string/{string} (GET)  
+Params:  {string} - passed string     
 Return: JSON object with data about passed string  
 
 EXAMPLE:  
 input  
 ```
-/string/aaAA12@$/AA  
+/string/aaAA12@$
 ```
 
 Response:  
@@ -24,7 +22,6 @@ Response:
     "lowercase": 2,  
     "numbers: 2,  
     "specialChars": 2,  
-    "contains": true,  
     "combination": true
 }   
 ```
