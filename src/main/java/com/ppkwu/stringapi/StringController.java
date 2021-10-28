@@ -36,10 +36,13 @@ public class StringController {
             }
         }
 
+        boolean contains = string.contains(substring);
+
         response.setUppercase(uppercase);
         response.setLowercase(lowercase);
         response.setNumbers(numbers);
         response.setSpecialChars(specialChars);
+        response.setContains(contains);
 
         return ResponseEntity.ok(new Gson().toJson(response));
     }
