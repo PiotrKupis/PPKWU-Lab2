@@ -29,10 +29,22 @@ public class StringController {
             .filter(Character::isDigit)
             .count();
 
+        long specialChars = 0;
+        for (char c : string.toCharArray()) {
+            if (isSpecialLetter(c)) {
+                ++specialChars;
+            }
+        }
+
         response.setUppercase(uppercase);
         response.setLowercase(lowercase);
         response.setNumbers(numbers);
+        response.setSpecialChars(specialChars);
 
         return ResponseEntity.ok(new Gson().toJson(response));
+    }
+
+    private boolean isSpecialLetter(char letter) {
+        return "/!@#$%^&*()_+-=;':\"{}[]".indexOf(letter) != -1;
     }
 }
