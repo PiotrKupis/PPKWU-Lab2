@@ -11,12 +11,25 @@ public class Response {
     private Long specialChars;
     private Boolean contains;
 
-    public Response(Long uppercase, Long lowercase, Long numbers, Long specialChars,
-        Boolean contains) {
+    public Response() {}
+
+    public void setUppercase(Long uppercase) {
         this.uppercase = uppercase;
+    }
+
+    public void setLowercase(Long lowercase) {
         this.lowercase = lowercase;
+    }
+
+    public void setNumbers(Long numbers) {
         this.numbers = numbers;
+    }
+
+    public void setSpecialChars(Long specialChars) {
         this.specialChars = specialChars;
+    }
+
+    public void setContains(Boolean contains) {
         this.contains = contains;
     }
 }
