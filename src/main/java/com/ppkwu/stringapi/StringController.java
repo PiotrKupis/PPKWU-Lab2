@@ -25,8 +25,13 @@ public class StringController {
             .filter(Character::isLowerCase)
             .count();
 
+        long numbers = string.chars()
+            .filter(Character::isDigit)
+            .count();
+
         response.setUppercase(uppercase);
         response.setLowercase(lowercase);
+        response.setNumbers(numbers);
 
         return ResponseEntity.ok(new Gson().toJson(response));
     }
