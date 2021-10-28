@@ -21,7 +21,12 @@ public class StringController {
             .filter(Character::isUpperCase)
             .count();
 
+        long lowercase = string.chars()
+            .filter(Character::isLowerCase)
+            .count();
+
         response.setUppercase(uppercase);
+        response.setLowercase(lowercase);
 
         return ResponseEntity.ok(new Gson().toJson(response));
     }
