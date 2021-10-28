@@ -9,7 +9,6 @@ public class Response {
     private Long lowercase;
     private Long numbers;
     private Long specialChars;
-    private Boolean contains;
     private Boolean combination;
 
     public Response() {
@@ -31,10 +30,6 @@ public class Response {
         this.specialChars = specialChars;
     }
 
-    public void setContains(Boolean contains) {
-        this.contains = contains;
-    }
-
     public void setCombination(Boolean combination) {
         this.combination = combination;
     }
@@ -46,7 +41,6 @@ public class Response {
             ", lowercase=" + lowercase +
             ", numbers=" + numbers +
             ", specialChars=" + specialChars +
-            ", contains=" + contains +
             ", combination=" + combination +
             '}';
     }

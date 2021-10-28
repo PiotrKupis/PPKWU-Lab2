@@ -15,13 +15,11 @@ public class StringController {
     /**
      * Method responsible for analyzing passed string.
      *
-     * @param string    passed string to analyze
-     * @param substring passed substring
+     * @param string passed string to analyze
      * @return object of type {@link ResponseEntity} containing information about passed string
      */
-    @GetMapping("string/{string}/{substring}")
-    public ResponseEntity<String> analyzeString(@PathVariable("string") String string,
-        @PathVariable("substring") String substring) {
+    @GetMapping("string/{string}")
+    public ResponseEntity<String> analyzeString(@PathVariable("string") String string) {
         Response response = new Response();
 
         long uppercase = string.chars()
@@ -42,15 +40,12 @@ public class StringController {
                 ++specialChars;
             }
         }
-
-        boolean contains = string.contains(substring);
         boolean combination = uppercase != 0 && lowercase != 0 && numbers != 0 && specialChars != 0;
 
         response.setUppercase(uppercase);
         response.setLowercase(lowercase);
         response.setNumbers(numbers);
         response.setSpecialChars(specialChars);
-        response.setContains(contains);
         response.setCombination(combination);
         return ResponseEntity.ok(new Gson().toJson(response));
     }
